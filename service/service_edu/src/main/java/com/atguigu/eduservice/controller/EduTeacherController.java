@@ -108,6 +108,9 @@ public class EduTeacherController {
             eduTeacherQueryWrapper.le("gmt_create", end);
         }
 
+        // 排序
+        eduTeacherQueryWrapper.orderByDesc("gmt_create");
+
         teacherService.page(pageTeacher, eduTeacherQueryWrapper);
         Long total = pageTeacher.getTotal();
         List<EduTeacher> records = pageTeacher.getRecords();
